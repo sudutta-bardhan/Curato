@@ -25,9 +25,8 @@ Curato/
   │── script.js
   │── images/
 
-
 ## 🖥️ Live Demo
-(You can enable GitHub Pages to host this project)
+[Visit Live Site](https://sudutta-bardhan.github.io/Curato/)
 
 ## 📧 Contact
 Made with ❤️ by Sudutta Bardhan
