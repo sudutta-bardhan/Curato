@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curato - Your Personal Stylist's Lookbook</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+      <img src="assets/images/logo.png" alt="Curato Logo" class="logo-img" />
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button id="personalizeBtn" class="btn-primary">Personalize</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Your Personal Stylist's Lookbook</h1>
+      <p>Curated Style Guides · Lookbooks · Brand Directory · User Uploads</p>
+      <button id="personalizeBtnHero" class="btn-primary">Get Started</button>
+    </section>
+
+    <section id="galleries" class="section">
+      <h2>Curated Looks</h2>
+      <div class="category-tabs">
+        <button class="tab active" data-category="casual">CASUAL</button>
+        <button class="tab" data-category="office">OFFICE</button>
+        <button class="tab" data-category="party">PARTY</button>
+      </div>
+      <div id="lookGallery" class="gallery">
+        <!-- Curated outfit cards injected by JS -->
+      </div>
+    </section>
+
+    <section id="brands" class="section">
+      <h2>Brand Lookbooks</h2>
+      <div class="brand-logos">
+        <img src="assets/images/zara.jpg" alt="Zara" />
+        <img src="assets/images/myntra.png" alt="Myntra" />
+        <img src="assets/images/hm.png" alt="H&M" />
+        <img src="assets/images/gucci.png" alt="Gucci" />
+        <img src="assets/images/chanel.jpg" alt="Chanel" />
+        <img src="assets/images/lv.png" alt="Louis Vuitton" />
+        <img src="assets/images/nykaa.png" alt="Nykaa" />
+      </div>
+    </section>
+
+    <section id="community" class="section">
+      <h2>Community Testimonials</h2>
+      <div class="community-posts">
+        <article class="community-post">
+          <img src="assets/images/community1.png" alt="Denim Jacket Style" />
+          <div class="post-content">
+            <h3>How I Styled My Denim Jacket</h3>
+            <p>Simple, versatile streetwear by @fashionlover</p>
+            <div class="votes-comments">
+              <span>❤️ 120</span>
+              <span>💬 30</span>
+            </div>
+          </div>
+        </article>
+        <article class="community-post">
+          <img src="assets/images/community2.png" alt="Office Chic Look" />
+          <div class="post-content">
+            <h3>Office Chic with Blazers</h3>
+            <p>Smart and confident by @stylequeen</p>
+            <div class="votes-comments">
+              <span>❤️ 90</span>
+              <span>💬 20</span>
+            </div>
+          </div>
+        </article>
+        <article class="community-post">
+          <img src="assets/images/community3.png" alt="Party Outfit Inspiration" />
+          <div class="post-content">
+            <h3>Party Ready in Sequins</h3>
+            <p>Bold and glamorous by @nightowl</p>
+            <div class="votes-comments">
+              <span>❤️ 150</span>
+              <span>💬 40</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="search-section" class="section">
+      <h2 style="text-align:center;">Search Fashion Looks</h2>
+      <form id="searchForm" style="max-width: 700px; margin: 0 auto 1.5rem auto; display: flex; gap: 0.5rem;">
+      <input type="text" id="queryInput" placeholder="Search fashion items, e.g. wide legged jeans" required
+      style="flex-grow:1; padding:0.8rem 1rem; font-size:1.1rem; border:2px solid #b8860b; border-radius:25px; outline:none; box-sizing:border-box;" />
+      <button type="submit" class="btn-primary" style="padding: 0 1.5rem; border-radius: 25px; font-weight: 600; cursor: pointer;">
+      Search
+      </button>
+      </form>
+      <div id="resultsGallery" class="gallery" style="max-width: 1000px; margin: 0 auto;"></div>
+    </section>
+
+
+    <section id="newsletter" class="section newsletter-section">
+      <h2>Subscribe to Our Newsletter</h2>
+      <form id="newsletterForm">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit" class="btn-primary">Subscribe</button>
+      </form>
+      <p class="newsletter-msg"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Curato. All rights reserved.</p>
+  </footer>
+
+  <div id="personalizeModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Personalize Your Style</h2>
+      <form id="personalizeForm">
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" name="height" min="100" max="220" required />
+        <label for="bodyType">Body Type:</label>
+        <select id="bodyType" name="bodyType" required>
+          <option value="" disabled selected>Select</option>
+          <option value="slim">Slim</option>
+          <option value="athletic">Athletic</option>
+          <option value="curvy">Curvy</option>
+          <option value="plus-size">Plus Size</option>
+          <option value="average">Average</option>
+        </select>
+        <label for="stylePref">Style Preference:</label>
+        <select id="stylePref" name="stylePref" required>
+          <option value="" disabled selected>Select</option>
+          <option value="casual">Casual</option>
+          <option value="office">Office</option>
+          <option value="party">Party</option>
+          <option value="streetwear">Streetwear</option>
+        </select>
+        <button type="submit" class="btn-primary">Save Preferences</button>
+        <button type="button" id="closeModal" class="btn-secondary">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
